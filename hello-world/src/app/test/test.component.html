@@ -1,0 +1,23 @@
+
+<h2 class="text-success">Welcome {{name}}</h2>
+
+<input  #myInput type="text" value="scott">
+<input [(id)]="myId" type="text" value="scott">
+<input bind-disabled="isDisabled" id="{{myId}}" type="text" value="Scott">
+
+<h2 class="text-success">{{name}}</h2>
+<h2 [class]="successClass">{{name}}</h2> 
+<h2 class="text-special" [class]="successClass">{{name}}</h2>
+<h2 [class.text-danger]="hasError" >{{name}}</h2>
+<h2 [ngClass]="messageClasses" >{{name}}</h2>
+
+<h2 [style.color]="hasError ? 'red' : 'green'">Style Binding</h2>
+<h2 [style.color]="highlightColor">Style Binding 2</h2>
+<h2 [ngStyle]="titleStyles">Style Binding 3</h2>
+
+<button (click)="onClick($event)" >Greet</button> {{greeting}}
+<button (click)="greeting = 'Scott Lee'" >Greet</button> {{greeting}}
+<button (click)="logMessage(myInput)">Log</button>
+
+<input [(ngModel)]="name" type="text">
+{{name}}
